@@ -4,6 +4,9 @@ const Ticket = () => {
   return (
       <>
           <main className="main-container">
+            <section className="task-container">
+
+              {/* Tasks ToDo */}
               <section className="task-todo-container">
                   <header>
                       <h2>Tasks</h2>
@@ -12,15 +15,19 @@ const Ticket = () => {
                   <section>
                       <h3>Task ToDo</h3>
                       <p>Description</p>
-                      <input type="date">
-                          Date published
-                      </input>
-                      <img alt="">Author</img>
+
+                      <div>
+                        <span type="date">Date published</span>
+                        <img alt=''/> {/* author image goes here*/}
+                      </div>
+
                       <div>Done/Not Done</div>
-                      <a href="#!" ref="_noreferrer">Git Commit Link</a>
+                      <a href="#!" >Git Commit Link</a>
+
                   </section>
               </section>
 
+              {/*Tasks Done */}
               <section className="task-done-container">
                   <header>
                       <h2>Tasks Done</h2>
@@ -34,6 +41,8 @@ const Ticket = () => {
                       <div>Task 1</div>
                   </section>
               </section>
+
+            </section>
           </main>
       </>
   )

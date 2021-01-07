@@ -9,7 +9,35 @@ body {
 	-moz-osx-font-smoothing: grayscale;
 }
 
-code {
-	font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
-		monospace;
+:root {
+	--light-text: #eeeeee;
+	--dark-text: #3b3b3b;
+}
+
+.main-container {
+	min-height: 100vh;
+	min-width: 100vw;
+	/* background-color: aqua; */
+}
+
+.task-container {
+	position: relative;
+	justify-content: center;
+	padding-top: 7rem;
+	display: grid;
+	grid-template-columns: 2/1fr;
+	grid-template-areas: "todo done";
+	gap: 5rem;
+}
+.task-todo-container {
+	grid-area: todo;
+	border: 1px solid #000000;
+	border-radius: 10px;
+	padding: 1rem;
+}
+.task-done-container {
+	grid-area: done;
+	border: 1px solid #000000;
+	border-radius: 10px;
+	padding: 1rem;
 }
