@@ -1,15 +1,18 @@
 import React from 'react';
 
-const Ticket = () => {
+const TasksTodoAndTasksDone = (post, index) => {
   return (
       <>
           <main className="main-container">
-            <section className="task-container">
 
+            <section 
+              className="task-container"
+              key={index}
+              >
               {/* Tasks ToDo */}
               <section className="task-todo-container">
                   <header>
-                      <h2>Tasks</h2>
+                      <h2>{post.title}</h2>
                   </header>
 
                   <section>
@@ -41,11 +44,11 @@ const Ticket = () => {
                       <div>Task 1</div>
                   </section>
               </section>
-
             </section>
+
           </main>
       </>
   )
 }
 
-export default Ticket;
+export default TasksTodoAndTasksDone;

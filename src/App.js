@@ -1,10 +1,10 @@
 import React from 'react';
-import Ticket from './components/Ticket';
+import TasksTodoAndTasksDone from './components/Tasks';
 
 function App() {
   return (
     <>
-      <Ticket />
+      <TasksTodoAndTasksDone />
     </>
   );
 }
