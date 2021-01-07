@@ -1,4 +1,5 @@
 import React, {useState, useEffect} from 'react';
+import sanityClient from 'sanity';
 import TasksTodoAndTasksDone from Tasks.js;
 
 const PostTasksFromClient = () => {
