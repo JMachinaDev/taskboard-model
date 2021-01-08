@@ -1,12 +1,10 @@
 import React from 'react';
-import TasksTodoAndTasksDone from './components/Tasks';
+import PostTasksFromClient from "./components/PostTasks";
 
 function App() {
   return (
-    <>
-      <TasksTodoAndTasksDone />
-    </>
-  );
+		<PostTasksFromClient />
+	);
 }
 
 export default App;
