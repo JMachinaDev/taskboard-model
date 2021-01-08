@@ -1,10 +1,25 @@
 import sanityClient from '@sanity/client';
-// import React, {useEffect} from 'react';
 
-
-export default sanityClient({
-    projectId: "9a6mhi26",
-    dataset: "production",
-    useCdn: true
-});
+export class Client {
+  constructor () {
+    this.client = sanityClient({
+      projectId: "9a6mhi26",
+      dataset: "production",
+      useCdn: true
+    });
+  }
+  
+  fetchData = () => {
+    return this.client
+    .fetch(
+      `*[_type == "post"]{
+      title,
+      slug,
+      date,
+      description,
+      'name': author->name,
+      'authorImage': author->image,
+    }`);
+  }
+}
 
