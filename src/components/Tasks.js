@@ -1,15 +1,24 @@
 import React from "react";
+import imageUrlbuilder from '@sanity/image-url';
 
-const TasksTodoAndTasksDone = (props) => {
-	const { post, index } = props;
+
+const TasksTodo = (props) => {
+  const { post, index } = props;
+  
+  // urlFor = (source) => {
+  //   return this.builder.image(source)
+  // };
+
 	return (
-		<main className='main-container'>
+    <main 
+      className='main-container'
+      to={post.slug.current}
+      key={post.slug.current}
+    >
+
 			<section className='task-container' key={index}>
 				{/* Tasks ToDo Container*/}
 				<section className='task-todo-container'>
-					<header style={{ backgroundColor: "red" }}>
-						<h2>Tasks</h2>
-					</header>
 
 					<section>
 						<h3>Task: {post.title}</h3>
@@ -17,32 +26,25 @@ const TasksTodoAndTasksDone = (props) => {
 
 						<div>
 							<span type='date'>Date Post: {new Date(post.date).toLocaleDateString()}</span>
-							<img alt='' /> {/* author image goes here*/}
-              {/* <p>Posted By: {post.author}</p> */}
 						</div>
+
+              <p>Posted By: {post.name}</p>
+              <img
+                // src={urlFor(post.authorImage).url()}
+                alt={post.name} 
+              /> {/* author image goes here*/}
+
+
 
 						<div>Done/Not Done</div>
 						<a href='#!'>Git Commit Link</a>
 					</section>
 				</section>
 
-				{/*Tasks Done Container*/}
-				<section className='task-done-container'>
-					<header>
-						<h2>Tasks Done</h2>
-					</header>
-					<section>
-						{/* where done tasks will be */}
-						<div>Task 1</div>
-						<div>Task 1</div>
-						<div>Task 1</div>
-						<div>Task 1</div>
-						<div>Task 1</div>
-					</section>
-				</section>
+				
 			</section>
 		</main>
 	);
 };
 
-export default TasksTodoAndTasksDone;
+export default TasksTodo;

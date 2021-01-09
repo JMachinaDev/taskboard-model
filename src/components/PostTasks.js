@@ -1,6 +1,9 @@
 import React, {useState, useEffect} from 'react';
 import { Client } from '../client';
-import TasksTodoAndTasksDone from "./Tasks";
+import TasksTodo from "./Tasks";
+
+// import imageUrlbuilder from '@sanity/image-url';
+// builder = () => ImageUrlBuilder(this.client);
 
 const PostTasksFromClient = (props) => {
   const[postData, setPost] = useState([]);
@@ -11,16 +14,23 @@ const PostTasksFromClient = (props) => {
       .then((data) => setPost(data))
       .catch(console.error);
   };
-  
+
   useEffect(initializeData, []);
 
   return (
 		<>
-      { postData ? 
-        postData.map((post, index) => (
-          <TasksTodoAndTasksDone key={index} post={post} index={index}/>
-        ))
-      : <div>Cannot Return Data, Comeback Later....</div> };
+    <main>
+      <section className="container-wrapper">
+        { postData ? 
+          postData.map((post, index) => (
+            <TasksTodo key={index} post={post} index={index}/>
+          ))
+        : <div>Cannot Return Data, Comeback Later....</div> };
+      </section>
+      <section>
+        {/* Task Done Section */}
+      </section>
+    </main>
 		</>
 	);
 }
