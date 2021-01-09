@@ -1,6 +1,6 @@
 import React, {useState, useEffect} from 'react';
 import { Client } from '../client';
-import TasksTodo from "./Tasks";
+import TasksTodo from "./TasksTodo";
 
 // import imageUrlbuilder from '@sanity/image-url';
 // builder = () => ImageUrlBuilder(this.client);
