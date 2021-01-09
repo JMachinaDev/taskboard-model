@@ -7,8 +7,8 @@ export class Client {
       dataset: "production",
       useCdn: true
     });
-  }
-  
+  }  
+
   fetchData = () => {
     return this.client
     .fetch(
@@ -22,4 +22,3 @@ export class Client {
     }`);
   }
 }
-
