@@ -1,26 +1,15 @@
 import React from 'react';
+import TasksTodo from './TasksTodo';
 
-const TaskDone = (props) => {
+const TaskDone = () => {
+
   return (
-    <>
-    {/* Tasks Done Container */}
-      <section 
-        className='task-done-container'
-        key={index}
-      >
-          <header>
-            <h2>Tasks Done</h2>
-          </header>
-          <section>
-            <div>Task 1</div>
-            <div>Task 1</div>
-            <div>Task 1</div>
-            <div>Task 1</div>
-            <div>Task 1</div>
-          </section>
+    <main>
+      <section className='task-done-container'>
+          <TasksTodo />
       </section>
-    </>
-  )
-}
+    </main>
+  );
+};
 
 export default TaskDone;
