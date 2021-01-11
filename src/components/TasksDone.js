@@ -6,7 +6,7 @@ const TaskDone = () => {
   return (
     <main>
       <section className='task-done-container'>
-          <TasksTodo />
+          
       </section>
     </main>
   );
