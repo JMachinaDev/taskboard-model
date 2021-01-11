@@ -13,33 +13,58 @@ body {
 	--light-text: #eeeeee;
 	--dark-text: #3b3b3b;
 }
-.container-wrapper {
+
+.tasks-wrapper {
+	display: grid;
+	grid-template-areas: "todo done";
+}
+.todo {
+	grid-area: todo;
+}
+.done {
+	grid-area: done;
+}
+
+.wrapper {
 	display: grid;
 	grid-auto-rows: auto;
 	max-width: 30rem;
 	gap: 8px;
 	margin: 8px;
+	border: 1px solid black;
+	border-radius: 10px;
+	padding: 8px;
 }
-
-.main-container {
-	/* min-height: 100vh; */
-	/* min-width: 100vw; */
-	/* background-color: aqua; */
+.tasks-todo {
 }
-
-.task-container {
-	/* position: relative; */
-	/* justify-content: center; */
-	/* padding-top: 7rem; */
-	/* display: grid; */
-	/* grid-template-columns: 2/1fr; */
-	/* grid-template-areas: "todo done"; */
-	/* gap: 5rem; */
+.tasks-done {
 }
 .task-todo-container {
-	grid-area: todo;
-	border: 1px solid #000000;
-	border-radius: 10px;
-	padding: 1rem;
+	border-bottom: 1px solid #000000;
 	max-width: 50rem;
+}
+
+.image-container {
+	display: flex;
+	justify-content: left;
+	align-items: center;
+	gap: 8px;
+	font-weight: 600;
+	padding-bottom: 8px;
+}
+.author-image {
+	height: 50px;
+	width: 50px;
+	border-radius: 50%;
+}
+
+p {
+	margin: 0px;
+	padding: 2px 0 2px 0;
+}
+h2 {
+	text-align: center;
+}
+h3 {
+	margin: 0 0 8px 0;
 }
