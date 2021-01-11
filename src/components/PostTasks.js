@@ -1,11 +1,8 @@
 import React, {useState, useEffect} from 'react';
-import { Client } from '../client';
 import TasksTodo from "./TasksTodo";
+import { Client } from '../client';
 
-// import imageUrlbuilder from '@sanity/image-url';
-// builder = () => ImageUrlBuilder(this.client);
-
-const PostTasksFromClient = (props) => {
+const PostTasksFromClient = () => {
   const[postData, setPost] = useState([]);
 
   const initializeData = () => {
@@ -15,21 +12,42 @@ const PostTasksFromClient = (props) => {
       .catch(console.error);
   };
 
+  // Object type
+  // console.log(typeof postData);
+  console.log(postData);
+
+  // Function
+  // console.log(typeof setPost);
+
+
   useEffect(initializeData, []);
 
   return (
 		<>
-    <main>
-      <section className="container-wrapper">
-        { postData ? 
-          postData.map((post, index) => (
-            <TasksTodo key={index} post={post} index={index}/>
+    <main className="tasks-wrapper">
+
+      <div className="todo">
+        <h2>Tickets</h2>
+        <section className="tasks-todo wrapper">
+          { postData ? 
+            postData.map((post, index) => (
+              <TasksTodo key={index} post={post} index={index}/>
+            ))
+          : <div>Cannot Return Data, Comeback Later....</div> }
+        </section>
+      </div>
+
+      <div className="done">
+        <h2>Completed</h2>
+        <section className="tasks-done wrapper">
+          { postData ? 
+            postData.map((post, index) => (
+              <TasksTodo key={index} post={post} index={index}/>
           ))
-        : <div>Cannot Return Data, Comeback Later....</div> };
-      </section>
-      <section>
-        {/* Task Done Section */}
-      </section>
+          : <div>Cannot Return Data, Comeback Later....</div> }
+        </section>
+      </div>
+
     </main>
 		</>
 	);
