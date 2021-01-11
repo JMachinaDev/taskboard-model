@@ -32,6 +32,11 @@ export default {
       type: 'text',
       maxLength: 96,
     },
+    {
+      name: 'url',
+      title: 'Git Link',
+      type: 'url',
+    }
   ],
 
   preview: {

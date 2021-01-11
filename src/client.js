@@ -17,6 +17,7 @@ export class Client {
       slug,
       date,
       description,
+      url,
       'name': author->name,
       'authorImage': author->image,
     }`);
