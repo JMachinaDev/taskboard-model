@@ -14,7 +14,8 @@ const PostTasksFromClient = () => {
 
   // Object type
   // console.log(typeof postData);
-  console.log(postData);
+  console.log(postData)
+  console.log(postData[2]["url"]);
 
   // Function
   // console.log(typeof setPost);
