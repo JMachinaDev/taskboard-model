@@ -13,39 +13,49 @@ body {
 	--light-text: #eeeeee;
 	--dark-text: #3b3b3b;
 }
-
+.post-container {
+	min-width: 100vw;
+	min-height: 100vh;
+	display: flex;
+	justify-content: center;
+	align-content: center;
+}
 .tasks-wrapper {
 	display: grid;
-	grid-template-areas: "todo done";
-}
-.todo {
-	grid-area: todo;
-}
-.done {
-	grid-area: done;
-}
-
-.wrapper {
-	display: grid;
-	grid-auto-rows: auto;
-	max-width: 30rem;
-	gap: 8px;
-	margin: 8px;
+	grid-template-columns: repeat(2, 2fr);
+	width: 75%;
+	margin: 10px;
 	border: 1px solid black;
+	border-radius: 10px;
+}
+.task-container {
+	display: grid;
+	grid-template-columns: auto;
+	max-width: 50rem;
+	border-radius: 10px;
+	height: auto;
+	padding: 8px;
+	margin: 8px;
+}
+.task-container > main:nth-child(odd) {
 	border-radius: 10px;
 	padding: 8px;
 }
-.tasks-todo {
+.task-container > main:nth-child(even) {
+	background-color: #eeeeee;
+	border-radius: 10px;
+	padding: 8px;
 }
-.tasks-done {
+.todo {
+	height: 10px;
 }
-.task-todo-container {
-	border-bottom: 1px solid #000000;
-	max-width: 50rem;
+.done {
+	height: 10px;
 }
 
 .image-container {
 	display: flex;
+	/* flex-direction: column; */
 	justify-content: left;
 	align-items: center;
 	gap: 8px;
@@ -57,7 +67,26 @@ body {
 	width: 50px;
 	border-radius: 50%;
 }
+.button-style {
+	display: inline-block;
+	float: right;
+}
+.task-date {
+	font-size: 12px;
+	font-weight: 700;
+	color: gray;
+}
 
+.task-commit-link {
+	font-size: 12px;
+	color: black;
+	padding: 0 6px 0 6px;
+	text-decoration: none;
+	border: 1px solid black;
+	border-radius: 10px;
+	/* padding: 2px; */
+	background-color: salmon;
+}
 p {
 	margin: 0px;
 	padding: 2px 0 2px 0;
@@ -65,6 +94,11 @@ p {
 h2 {
 	text-align: center;
 }
-h3 {
+h5 {
 	margin: 0 0 8px 0;
+}
+h4 {
+	/* color: gray; */
+	margin: 0;
+	padding: 0;
 }
