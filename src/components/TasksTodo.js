@@ -1,31 +1,23 @@
 import React from "react";
 import urlFor from '../components/ImageBuilder';
 
-const TasksTodo = (props) => {
-  const { post, index } = props;
+const TaskTodo = (props) => {
+  const { post } = props;
 
   return (
-    <main
-      to={post.slug.current}
-      key={post.slug.current}
-    >
-      <section
-        className='task-todo-container'
-        key={index}
-      >
-          <header>
-            <h3>Task: {post.title}</h3>
+    <main to={post.slug.current} >
+      <section>
+
+        <section>
+          <header style={{display: 'inline-block', paddingRight: 16}}>
+            <h4>Task #: {post.title}</h4>
+            <span className="task-date">{new Date(post.date).toLocaleDateString()}</span>
           </header>
+        </section>
+
+        <section className="display-container">
           <p>Description: {post.description}</p>
-
-          <div>
-            <span
-              type='date'>Posted: {new Date(post.date).toLocaleDateString()}
-            </span>
-          </div>
-
-          <div>{/*Red = Not Done, Green = Done*/}</div>
-
+          <a href={post.url} target="_blank" rel="noreferrer">{post.url}</a>
           <span className="image-container">
             <img
               src={urlFor(post.authorImage).url()}
@@ -34,10 +26,11 @@ const TasksTodo = (props) => {
             />
             <p>{post.name}</p>
           </span>
+        </section>
 
       </section>
 		</main>
 	);
 };
 
-export default TasksTodo;
+export default TaskTodo;
