@@ -1,5 +1,6 @@
 import React, {useState, useEffect} from 'react';
-import TasksTodo from "./TasksTodo";
+import TaskTodo from "./TasksTodo";
+import TaskDone from './TasksDone';
 import { Client } from '../client';
 
 const PostTasksFromClient = () => {
@@ -11,46 +12,28 @@ const PostTasksFromClient = () => {
       .then((data) => setPost(data))
       .catch(console.error);
   };
-
-  // Object type
-  // console.log(typeof postData);
-  console.log(postData)
-  console.log(postData[2]["url"]);
-
-  // Function
-  // console.log(typeof setPost);
-
-
   useEffect(initializeData, []);
 
   return (
-		<>
-    <main className="tasks-wrapper">
+    <div className="post-container">
+      <main className="tasks-wrapper">
 
-      <div className="todo">
-        <h2>Tickets</h2>
-        <section className="tasks-todo wrapper">
-          { postData ? 
-            postData.map((post, index) => (
-              <TasksTodo key={index} post={post} index={index}/>
-            ))
-          : <div>Cannot Return Data, Comeback Later....</div> }
+        <section className='task-container todo'>
+          <h1>Tasks</h1>
+          { postData && postData.filter(p => !p.url).map((post, index) => (
+            <TaskTodo post={post} key={index} />
+          ))}
         </section>
-      </div>
 
-      <div className="done">
-        <h2>Completed</h2>
-        <section className="tasks-done wrapper">
-          { postData ? 
-            postData.map((post, index) => (
-              <TasksTodo key={index} post={post} index={index}/>
-          ))
-          : <div>Cannot Return Data, Comeback Later....</div> }
+        <section className='task-container done'>
+          <h1>Completed</h1>
+          { postData && postData.filter(p => p.url).map((post, index) => (
+            <TaskDone  post={post} key={index} />
+          ))}
         </section>
-      </div>
 
-    </main>
-		</>
+      </main>
+    </div>
 	);
 }
 
